@@ -37,6 +37,7 @@ public class ClientePersistencia {
 			ResultSet rs=st.executeQuery(consulta);
 			rs.next();
 			int id =rs.getInt("MAXID");
+			System.out.println("El cliente con id "+id+" ha sido creado exitosamente");
 			idF=id;
 			st.close();
 		} catch (SQLException e) {
@@ -79,6 +80,7 @@ public class ClientePersistencia {
 				resultado=rs.getString("claveCliente");
 				break;
 			}
+			System.out.println("El registro en el campo "+campo+" es:");
 			st.close();
 		}
 		catch (SQLException e) {
@@ -94,13 +96,13 @@ public class ClientePersistencia {
 		boolean resultado=false;
 		try {
 			Connection conection = getMySQL_Connection();
-			String consulta = "SELECT * from clientes;";
+			String consulta = "SELECT * from clientes where idCliente="+idCliente+";";
 			Statement st = conection.createStatement(
 					ResultSet.TYPE_SCROLL_INSENSITIVE, 
                     ResultSet.CONCUR_UPDATABLE
                     );
 			ResultSet rs=st.executeQuery(consulta);	
-			rs.absolute(idCliente);
+			rs.absolute(1);
 			switch(campo) {
 			case "nombre":
 			case "Nombre":
@@ -123,6 +125,7 @@ public class ClientePersistencia {
 				break;
 			}
 			rs.updateRow();
+			System.out.println("El registro con id "+idCliente+"ha recibo una actualización del campo "+campo);
 			st.close();
 			resultado=true;
 		}
@@ -156,6 +159,7 @@ public class ClientePersistencia {
 		}
 		if(idF!=0) {
 			result=true;
+			System.out.println("El cliente fue borrado correctamente");
 		}
 		return result;		
 	}

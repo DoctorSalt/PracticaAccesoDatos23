@@ -49,8 +49,8 @@ public class HotelManager {
 	public static void deleteClientes(ClientePOJO cl) {
 		Session sessionObj = getSessionFactory().openSession();
 		Transaction transObj = sessionObj.beginTransaction();
-		ClientePOJO peliculaBD = (ClientePOJO) sessionObj.load(ClientePOJO.class, cl.getIdCliente());
-		sessionObj.delete(peliculaBD);
+		ClientePOJO clienteBD = (ClientePOJO) sessionObj.load(ClientePOJO.class, cl.getIdCliente());
+		sessionObj.delete(clienteBD);
 		transObj.commit();
 		sessionObj.close();
 		System.out.println("Eliminado correctamente");
