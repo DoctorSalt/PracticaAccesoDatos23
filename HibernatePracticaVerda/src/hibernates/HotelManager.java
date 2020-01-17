@@ -21,7 +21,7 @@ public class HotelManager {
 		sessionObj.close();
 		System.out.println("Persona " + p.getIdCliente() + " insertada correctamente");
 	}
-	public static List readClientes(int idSeleccionada) {
+	public static void readClientes(int idSeleccionada) {
 		String c = "FROM ClientePOJO";
 		Session sessionObj = getSessionFactory().openSession();
 		List results = sessionObj.createQuery(c,ClientePOJO.class).list();
@@ -33,7 +33,6 @@ public class HotelManager {
 			}
 		}
 		sessionObj.close();
-		return results;
 	}
 
 	public static void updateClientes(ClientePOJO cl) {

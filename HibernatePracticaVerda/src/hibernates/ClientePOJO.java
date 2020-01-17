@@ -25,15 +25,15 @@ public class ClientePOJO implements java.io.Serializable {
 	@Column(name = "idCliente")
 	private Integer idCliente;
 	@Column(name = "nombreCliente")
-	private String nombreCliente;
+	private String nombre;
 	@Column(name="apellidosCliente")
-	private String apellidosCliente;
+	private String apellidos;
 	@Column(name="emailCliente")
-	private String emailCliente;
+	private String email;
 	@Column(name="dniCliente")
-	private String dniCliente;
+	private String dni;
 	@Column(name="claveCliente")
-	private String claveCliente;
+	private String clave;
 
 	public ClientePOJO() {
 	}
@@ -42,24 +42,24 @@ public class ClientePOJO implements java.io.Serializable {
 	}
 	public ClientePOJO(int  idClienteR, String apellidosCliente) {
 		this.idCliente = idClienteR;
-		this.apellidosCliente= apellidosCliente;
+		this.apellidos= apellidosCliente;
 	}
 	public ClientePOJO(int  idClienteR, String nombreCliente, String apellidosCliente, String emailCliente, String dniCliente,
 			String claveCliente) {
 		this.idCliente = idClienteR;
-		this.nombreCliente = nombreCliente;
-		this.apellidosCliente = apellidosCliente;
-		this.emailCliente = emailCliente;
-		this.dniCliente = dniCliente;
-		this.claveCliente = claveCliente;
+		this.nombre = nombreCliente;
+		this.apellidos = apellidosCliente;
+		this.email = emailCliente;
+		this.dni = dniCliente;
+		this.clave = claveCliente;
 	}
 	public ClientePOJO(String nombreCliente, String apellidosCliente, String emailCliente, String dniCliente,
 			String claveCliente) {
-		this.nombreCliente = nombreCliente;
-		this.apellidosCliente = apellidosCliente;
-		this.emailCliente = emailCliente;
-		this.dniCliente = dniCliente;
-		this.claveCliente = claveCliente;
+		this.nombre = nombreCliente;
+		this.apellidos = apellidosCliente;
+		this.email = emailCliente;
+		this.dni = dniCliente;
+		this.clave = claveCliente;
 	}
 
 	public Integer getIdCliente() {
@@ -71,43 +71,43 @@ public class ClientePOJO implements java.io.Serializable {
 	}
 
 	public String getNombreCliente() {
-		return this.nombreCliente;
+		return this.nombre;
 	}
 
 	public void setNombreCliente(String nombreCliente) {
-		this.nombreCliente = nombreCliente;
+		this.nombre = nombreCliente;
 	}
 
 	public String getApellidosCliente() {
-		return this.apellidosCliente;
+		return this.apellidos;
 	}
 
 	public void setApellidosCliente(String apellidosCliente) {
-		this.apellidosCliente = apellidosCliente;
+		this.apellidos = apellidosCliente;
 	}
 
 	public String getEmailCliente() {
-		return this.emailCliente;
+		return this.email;
 	}
 
 	public void setEmailCliente(String emailCliente) {
-		this.emailCliente = emailCliente;
+		this.email = emailCliente;
 	}
 
 	public String getDniCliente() {
-		return this.dniCliente;
+		return this.dni;
 	}
 
 	public void setDniCliente(String dniCliente) {
-		this.dniCliente = dniCliente;
+		this.dni = dniCliente;
 	}
 
 	public String getClaveCliente() {
-		return this.claveCliente;
+		return this.clave;
 	}
 
 	public void setClaveCliente(String claveCliente) {
-		this.claveCliente = claveCliente;
+		this.clave = claveCliente;
 	}
 
 }
