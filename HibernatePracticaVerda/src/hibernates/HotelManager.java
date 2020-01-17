@@ -25,9 +25,9 @@ public class HotelManager {
 		String c = "FROM ClientePOJO";
 		Session sessionObj = getSessionFactory().openSession();
 		List results = sessionObj.createQuery(c,ClientePOJO.class).list();
-		Iterator perrossiterator = results.iterator();
-		while (perrossiterator.hasNext()) {
-			ClientePOJO a2 = (ClientePOJO) perrossiterator.next();
+		Iterator personasIterator = results.iterator();
+		while (personasIterator.hasNext()) {
+			ClientePOJO a2 = (ClientePOJO) personasIterator.next();
 			if(a2.getIdCliente()==idSeleccionada) {
 				System.out.println(" - "+a2.getNombreCliente()+ " - "+a2.getApellidosCliente()+" - "+a2.getEmailCliente()+" - "+a2.getDniCliente()+" - "+a2.getClaveCliente());
 			}
